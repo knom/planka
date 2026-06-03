@@ -62,7 +62,7 @@
   .cardsInnerWrapper {
     overflow-x: hidden;
     overflow-y: auto;
-    width: 290px;
+    width: calc(var(--kanban-list-width) + 18px);
 
     @supports (-moz-appearance: none) {
       scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
@@ -70,7 +70,7 @@
     }
 
     &:hover {
-      width: 272px;
+      width: var(--kanban-list-width);
     }
 
     &::-webkit-scrollbar {
@@ -89,7 +89,7 @@
   .cardsOuterWrapper {
     padding: 0 8px;
     white-space: normal;
-    width: 272px;
+    width: var(--kanban-list-width);
   }
 
   .header {
@@ -157,7 +157,9 @@
 
   .innerWrapper {
     margin-right: 8px;
-    width: 272px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: var(--kanban-list-width);
   }
 
   .outerWrapper {

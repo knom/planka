@@ -148,6 +148,14 @@ const KanbanContent = React.memo(() => {
     }
   }, [listIds, isAddListOpened]);
 
+  useEffect(() => {
+    document.body.classList.add(globalStyles.kanbanSnapping);
+
+    return () => {
+      document.body.classList.remove(globalStyles.kanbanSnapping);
+    };
+  }, []);
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div ref={wrapperRef} className={styles.wrapper} onMouseDown={handleMouseDown}>

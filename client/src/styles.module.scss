@@ -7,9 +7,19 @@
   #app {
     background: #22252a;
     overflow-x: auto;
+    --kanban-list-width: 272px;
+
+    @media (width < 768px) {
+      --kanban-list-width: calc(100vw - 44px);
+    }
 
     &::-webkit-scrollbar {
       height: auto;
+    }
+
+    &.kanbanSnapping {
+      scroll-padding-left: 20px;
+      scroll-snap-type: x mandatory;
     }
 
     .mentions-input {

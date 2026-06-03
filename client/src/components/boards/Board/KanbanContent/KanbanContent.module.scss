@@ -44,7 +44,9 @@
 
   .list {
     margin-right: 8px;
-    width: 272px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: var(--kanban-list-width);
   }
 
   .lists {
