@@ -149,10 +149,16 @@ const KanbanContent = React.memo(() => {
   }, [listIds, isAddListOpened]);
 
   useEffect(() => {
-    document.body.classList.add(globalStyles.kanbanSnapping);
+    const appNode = document.getElementById('app');
+
+    if (!appNode) {
+      return undefined;
+    }
+
+    appNode.classList.add(globalStyles.kanbanSnapping);
 
     return () => {
-      document.body.classList.remove(globalStyles.kanbanSnapping);
+      appNode.classList.remove(globalStyles.kanbanSnapping);
     };
   }, []);
 
