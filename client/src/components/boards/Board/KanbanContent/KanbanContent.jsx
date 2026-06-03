@@ -149,9 +149,9 @@ const KanbanContent = React.memo(() => {
   }, [listIds, isAddListOpened]);
 
   useEffect(() => {
-    const appNode = document.body;
+    const appNode = document.getElementById('app');
 
-    if (appNode.id !== 'app') {
+    if (!appNode) {
       return undefined;
     }
 
